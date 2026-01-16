@@ -1,6 +1,6 @@
 # Material by Supplier Extension
 
-A SAP Fiori elements extension app for the RAP / Material Supplier core project
+An SAP Fiori elements extension for the RAP / Material Supplier core project
 (core repo: `rap-material-supplier`). It builds on the core OData service and adds a focused UI5
 extension layer around the `MatProv` entity.
 
