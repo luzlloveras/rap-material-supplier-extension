@@ -1,0 +1,82 @@
+[
+  {
+    "Matnr": "MAT-1001",
+    "IdProveedor": "SUP-001",
+    "MaterialDescription": "Stainless Steel Bolt M8",
+    "ProveedorDescription": "Northline Industrial",
+    "Stock": "240",
+    "PrecioUnitario": "0.45"
+  },
+  {
+    "Matnr": "MAT-1001",
+    "IdProveedor": "SUP-003",
+    "MaterialDescription": "Stainless Steel Bolt M8",
+    "ProveedorDescription": "BluePeak Components",
+    "Stock": "120",
+    "PrecioUnitario": "0.48"
+  },
+  {
+    "Matnr": "MAT-1002",
+    "IdProveedor": "SUP-002",
+    "MaterialDescription": "Aluminum Sheet 2mm",
+    "ProveedorDescription": "AeroMetals Co.",
+    "Stock": "80",
+    "PrecioUnitario": "32.10"
+  },
+  {
+    "Matnr": "MAT-1002",
+    "IdProveedor": "SUP-001",
+    "MaterialDescription": "Aluminum Sheet 2mm",
+    "ProveedorDescription": "Northline Industrial",
+    "Stock": "60",
+    "PrecioUnitario": "31.50"
+  },
+  {
+    "Matnr": "MAT-1003",
+    "IdProveedor": "SUP-003",
+    "MaterialDescription": "Polymer Gasket 50mm",
+    "ProveedorDescription": "BluePeak Components",
+    "Stock": "500",
+    "PrecioUnitario": "1.20"
+  },
+  {
+    "Matnr": "MAT-1004",
+    "IdProveedor": "SUP-002",
+    "MaterialDescription": "Copper Tube 10mm",
+    "ProveedorDescription": "AeroMetals Co.",
+    "Stock": "95",
+    "PrecioUnitario": "12.75"
+  },
+  {
+    "Matnr": "MAT-1005",
+    "IdProveedor": "SUP-001",
+    "MaterialDescription": "Bearing 6204",
+    "ProveedorDescription": "Northline Industrial",
+    "Stock": "150",
+    "PrecioUnitario": "6.90"
+  },
+  {
+    "Matnr": "MAT-1005",
+    "IdProveedor": "SUP-003",
+    "MaterialDescription": "Bearing 6204",
+    "ProveedorDescription": "BluePeak Components",
+    "Stock": "40",
+    "PrecioUnitario": "7.10"
+  },
+  {
+    "Matnr": "MAT-1006",
+    "IdProveedor": "SUP-001",
+    "MaterialDescription": "Industrial Adhesive 1L",
+    "ProveedorDescription": "Northline Industrial",
+    "Stock": "35",
+    "PrecioUnitario": "18.90"
+  },
+  {
+    "Matnr": "MAT-1006",
+    "IdProveedor": "SUP-002",
+    "MaterialDescription": "Industrial Adhesive 1L",
+    "ProveedorDescription": "AeroMetals Co.",
+    "Stock": "20",
+    "PrecioUnitario": "19.40"
+  }
+]

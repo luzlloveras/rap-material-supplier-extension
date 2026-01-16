@@ -30,19 +30,19 @@
                 <Annotation Term="UI.Facets">
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Label" String="Matnr"/>
-                            <PropertyValue Property="ID" String="Matnr"/>
+                            <PropertyValue Property="Label" String="Overview"/>
+                            <PropertyValue Property="ID" String="Overview"/>
                             <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
                         </Record>
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.HeaderInfo">
                     <Record>
-                        <PropertyValue Property="TypeName" String="Materiales"/>
-                        <PropertyValue Property="TypeNamePlural" String="Materiales"/>
+                        <PropertyValue Property="TypeName" String="Material"/>
+                        <PropertyValue Property="TypeNamePlural" String="Materials"/>
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
-                                <PropertyValue Property="Label" String="Material Number"/>
+                                <PropertyValue Property="Label" String="Material ID"/>
                                 <PropertyValue Property="Value" Path="Matnr"/>
                             </Record>
                         </PropertyValue>
@@ -51,10 +51,11 @@
                 <Annotation Term="UI.Identification">
                     <Collection>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="Material Number"/>
+                            <PropertyValue Property="Label" String="Material ID"/>
                             <PropertyValue Property="Value" Path="Matnr"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Material Description"/>
                             <PropertyValue Property="Value" Path="MaterialDescription"/>
                         </Record>
                     </Collection>
@@ -62,6 +63,7 @@
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Material Description"/>
                             <PropertyValue Property="Value" Path="MaterialDescription"/>
                         </Record>
                     </Collection>
@@ -85,52 +87,141 @@
                 </Annotation>
             </Annotations>
             <Annotations Target="cds_zmara_service_definition.MatProvType">
-                <Annotation Term="UI.Facets">
-                    <Collection>
-                        <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Label" String="Matnr"/>
-                            <PropertyValue Property="ID" String="Matnr"/>
-                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
-                        </Record>
-                        <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Label" String="IdProveedor"/>
-                            <PropertyValue Property="ID" String="IdProveedor"/>
-                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
-                        </Record>
-                    </Collection>
-                </Annotation>
                 <Annotation Term="UI.HeaderInfo">
                     <Record>
-                        <PropertyValue Property="TypeName" String="Materiales por proveedor"/>
-                        <PropertyValue Property="TypeNamePlural" String="Materiales por proveedor"/>
+                        <PropertyValue Property="TypeName" String="Supplier Material"/>
+                        <PropertyValue Property="TypeNamePlural" String="Supplier Materials"/>
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
-                                <PropertyValue Property="Label" String="Material Number"/>
+                                <PropertyValue Property="Label" String="Material ID"/>
                                 <PropertyValue Property="Value" Path="Matnr"/>
                             </Record>
                         </PropertyValue>
                     </Record>
                 </Annotation>
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Stock"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Stock"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Unit Price"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#UnitPrice"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="Stock">
+                    <Record>
+                        <PropertyValue Property="Title" String="Stock"/>
+                        <PropertyValue Property="Value" Path="Stock"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="UnitPrice">
+                    <Record>
+                        <PropertyValue Property="Title" String="Unit Price"/>
+                        <PropertyValue Property="Value" Path="PrecioUnitario"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="Material">
+                    <Record>
+                        <PropertyValue Property="Label" String="Material"/>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Material ID"/>
+                                    <PropertyValue Property="Value" Path="Matnr"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Material Description"/>
+                                    <PropertyValue Property="Value" Path="MaterialDescription"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="Supplier">
+                    <Record>
+                        <PropertyValue Property="Label" String="Supplier"/>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Supplier ID"/>
+                                    <PropertyValue Property="Value" Path="IdProveedor"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Supplier Name"/>
+                                    <PropertyValue Property="Value" Path="ProveedorDescription"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="Pricing">
+                    <Record>
+                        <PropertyValue Property="Label" String="Pricing and Stock"/>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Available Stock"/>
+                                    <PropertyValue Property="Value" Path="Stock"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Unit Price"/>
+                                    <PropertyValue Property="Value" Path="PrecioUnitario"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Overview"/>
+                            <PropertyValue Property="ID" String="Overview"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Material"/>
+                            <PropertyValue Property="ID" String="Material"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Material"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Supplier"/>
+                            <PropertyValue Property="ID" String="Supplier"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Supplier"/>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Pricing and Stock"/>
+                            <PropertyValue Property="ID" String="Pricing"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#Pricing"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
                 <Annotation Term="UI.Identification">
                     <Collection>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="ID Proveedor"/>
+                            <PropertyValue Property="Label" String="Supplier ID"/>
                             <PropertyValue Property="Value" Path="IdProveedor"/>
                         </Record>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="Material Number"/>
+                            <PropertyValue Property="Label" String="Material ID"/>
                             <PropertyValue Property="Value" Path="Matnr"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Material Description"/>
                             <PropertyValue Property="Value" Path="MaterialDescription"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Supplier Name"/>
                             <PropertyValue Property="Value" Path="ProveedorDescription"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Available Stock"/>
                             <PropertyValue Property="Value" Path="Stock"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Unit Price"/>
                             <PropertyValue Property="Value" Path="PrecioUnitario"/>
                         </Record>
                     </Collection>
@@ -138,15 +229,23 @@
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Material ID"/>
+                            <PropertyValue Property="Value" Path="Matnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Material Description"/>
                             <PropertyValue Property="Value" Path="MaterialDescription"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Supplier Name"/>
                             <PropertyValue Property="Value" Path="ProveedorDescription"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Available Stock"/>
                             <PropertyValue Property="Value" Path="Stock"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Unit Price"/>
                             <PropertyValue Property="Value" Path="PrecioUnitario"/>
                         </Record>
                     </Collection>
@@ -165,10 +264,10 @@
                 </Annotation>
                 <Annotation Term="UI.SelectionFields">
                     <Collection>
+                        <PropertyPath>Matnr</PropertyPath>
                         <PropertyPath>MaterialDescription</PropertyPath>
                         <PropertyPath>ProveedorDescription</PropertyPath>
-                        <PropertyPath>Stock</PropertyPath>
-                        <PropertyPath>PrecioUnitario</PropertyPath>
+                        <PropertyPath>IdProveedor</PropertyPath>
                     </Collection>
                 </Annotation>
             </Annotations>
@@ -176,19 +275,19 @@
                 <Annotation Term="UI.Facets">
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Label" String="IdProveedor"/>
-                            <PropertyValue Property="ID" String="IdProveedor"/>
+                            <PropertyValue Property="Label" String="Overview"/>
+                            <PropertyValue Property="ID" String="Overview"/>
                             <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
                         </Record>
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.HeaderInfo">
                     <Record>
-                        <PropertyValue Property="TypeName" String="Proveedores"/>
-                        <PropertyValue Property="TypeNamePlural" String="Proveedores"/>
+                        <PropertyValue Property="TypeName" String="Supplier"/>
+                        <PropertyValue Property="TypeNamePlural" String="Suppliers"/>
                         <PropertyValue Property="Title">
                             <Record Type="UI.DataField">
-                                <PropertyValue Property="Label" String="ID Proveedor"/>
+                                <PropertyValue Property="Label" String="Supplier ID"/>
                                 <PropertyValue Property="Value" Path="IdProveedor"/>
                             </Record>
                         </PropertyValue>
@@ -197,10 +296,11 @@
                 <Annotation Term="UI.Identification">
                     <Collection>
                         <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="ID Proveedor"/>
+                            <PropertyValue Property="Label" String="Supplier ID"/>
                             <PropertyValue Property="Value" Path="IdProveedor"/>
                         </Record>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Supplier Name"/>
                             <PropertyValue Property="Value" Path="ProveedorDescription"/>
                         </Record>
                     </Collection>
@@ -208,6 +308,7 @@
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Supplier Name"/>
                             <PropertyValue Property="Value" Path="ProveedorDescription"/>
                         </Record>
                     </Collection>
@@ -226,7 +327,42 @@
                 </Annotation>
                 <Annotation Term="UI.SelectionFields">
                     <Collection>
+                        <PropertyPath>IdProveedor</PropertyPath>
                         <PropertyPath>ProveedorDescription</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zmara_service_definition.cds_zmara_service_definition_Entities/MatProv">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Material ID"/>
+                            <PropertyValue Property="Value" Path="Matnr"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Material Description"/>
+                            <PropertyValue Property="Value" Path="MaterialDescription"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Supplier Name"/>
+                            <PropertyValue Property="Value" Path="ProveedorDescription"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Available Stock"/>
+                            <PropertyValue Property="Value" Path="Stock"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Unit Price"/>
+                            <PropertyValue Property="Value" Path="PrecioUnitario"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Matnr</PropertyPath>
+                        <PropertyPath>MaterialDescription</PropertyPath>
+                        <PropertyPath>ProveedorDescription</PropertyPath>
+                        <PropertyPath>IdProveedor</PropertyPath>
                     </Collection>
                 </Annotation>
             </Annotations>

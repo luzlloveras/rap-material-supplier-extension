@@ -1,44 +1,35 @@
-## Application Details
-|               |
-| ------------- |
-|**Generation Date and Time**<br>Tue Jul 18 2023 21:09:54 GMT+0000 (Coordinated Universal Time)|
-|**App Generator**<br>@sap/generator-fiori-elements|
-|**App Generator Version**<br>1.10.2|
-|**Generation Platform**<br>SAP Business Application Studio|
-|**Template Used**<br>List Report Page V2|
-|**Service Type**<br>SAP System (ABAP On Premise)|
-|**Service URL**<br>https://95dd8c1f-9cd4-4de9-b928-0b89cd0c49b3.abap.eu10.hana.ondemand.com/sap/opu/odata/sap/ZMARA_SERVICE_BINDING
-|**Module Name**<br>material_by_supplier_extension|
-|**Application Title**<br>Extension App material by supplier|
-|**Namespace**<br>|
-|**UI5 Theme**<br>sap_horizon|
-|**UI5 Version**<br>1.111.5|
-|**Enable Code Assist Libraries**<br>False|
-|**Enable TypeScript**<br>False|
-|**Add Eslint configuration**<br>False|
-|**Main Entity**<br>MatProv|
-|**Navigation Entity**<br>None|
+# Material by Supplier Extension
 
-## material_by_supplier_extension
+A SAP Fiori elements extension app for the RAP / Material Supplier core project
+(core repo: `rap-material-supplier`). It builds on the core OData service and adds a focused UI5
+extension layer around the `MatProv` entity.
 
-Extension App material by supplier
+This extension demonstrates:
+- List Report/Object Page extensions for supplier-focused material data
+- Structured Object Page sections with header KPIs and workflow actions
+- Local annotations and metadata tailored to the extension
+- Curated mock dataset for realistic local demos
 
-### Starting the generated app
+## Local setup
 
--   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply run the following from the generated app root folder:
+Prerequisite: Node.js LTS
 
 ```
-    npm start
+npm install
+npm start
 ```
 
-- It is also possible to run the application using mock data that reflects the OData Service URL supplied during application generation.  In order to run the application with Mock Data, run the following from the generated app root folder:
-
+This runs with local mock data by default. If you want the dedicated mock profile:
 ```
-    npm run start-mock
+npm run start-mock
 ```
 
-#### Pre-requisites:
+## Scope
 
-1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
+This repo includes the UI5 extension app, local annotations/metadata, and the UI5 tooling configs
+needed to run and deploy the extension.
 
+## Non-goals
 
+This repo does not own the backend service, business logic, or system landscape configuration. It is
+not a full clone of the core app and does not introduce new functional requirements.

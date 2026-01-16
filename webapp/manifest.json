@@ -21,7 +21,6 @@
                 "type": "OData",
                 "settings": {
                     "annotations": [
-                        "ZMARA_SERVICE_BINDING_VAN",
                         "annotation"
                     ],
                     "localUri": "localService/metadata.xml",
@@ -87,6 +86,24 @@
                 "sap.ui.comp": {},
                 "sap.ui.generic.app": {},
                 "sap.suite.ui.generic.template": {}
+            }
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.controllerExtensions": {
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "controllerName": "materialbysupplierextension.ext.ObjectPageExt"
+                    }
+                },
+                "sap.ui.viewExtensions": {
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "AfterFacet|Pricing": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "materialbysupplierextension.ext.fragments.WorkflowActions",
+                            "type": "XML"
+                        }
+                    }
+                }
             }
         },
         "contentDensities": {

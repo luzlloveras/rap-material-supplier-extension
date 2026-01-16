@@ -28,10 +28,6 @@ server:
       afterMiddleware: compression
       configuration:
         ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
-        backend:
-          - path: /sap
-            url: https://95dd8c1f-9cd4-4de9-b928-0b89cd0c49b3.abap.eu10.hana.ondemand.com
-            destination: GA5
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:

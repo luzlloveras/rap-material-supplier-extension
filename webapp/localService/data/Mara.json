@@ -1,0 +1,26 @@
+[
+  {
+    "Matnr": "MAT-1001",
+    "MaterialDescription": "Stainless Steel Bolt M8"
+  },
+  {
+    "Matnr": "MAT-1002",
+    "MaterialDescription": "Aluminum Sheet 2mm"
+  },
+  {
+    "Matnr": "MAT-1003",
+    "MaterialDescription": "Polymer Gasket 50mm"
+  },
+  {
+    "Matnr": "MAT-1004",
+    "MaterialDescription": "Copper Tube 10mm"
+  },
+  {
+    "Matnr": "MAT-1005",
+    "MaterialDescription": "Bearing 6204"
+  },
+  {
+    "Matnr": "MAT-1006",
+    "MaterialDescription": "Industrial Adhesive 1L"
+  }
+]

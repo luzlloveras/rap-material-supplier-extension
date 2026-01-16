@@ -52,12 +52,12 @@
                     <PropertyRef Name="Matnr"/>
                     <PropertyRef Name="IdProveedor"/>
                 </Key>
-                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false"/>
-                <Property Name="IdProveedor" Type="Edm.String" Nullable="false" MaxLength="40" sap:creatable="false" sap:updatable="false"/>
-                <Property Name="MaterialDescription" Type="Edm.String" MaxLength="40"/>
-                <Property Name="ProveedorDescription" Type="Edm.String" MaxLength="40"/>
-                <Property Name="Stock" Type="Edm.String" MaxLength="4" sap:display-format="NonNegative"/>
-                <Property Name="PrecioUnitario" Type="Edm.String" MaxLength="6" sap:display-format="NonNegative"/>
+                <Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Material ID" sap:creatable="true" sap:updatable="true"/>
+                <Property Name="IdProveedor" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Supplier ID" sap:creatable="true" sap:updatable="true"/>
+                <Property Name="MaterialDescription" Type="Edm.String" MaxLength="40" sap:label="Material Description"/>
+                <Property Name="ProveedorDescription" Type="Edm.String" MaxLength="40" sap:label="Supplier Name"/>
+                <Property Name="Stock" Type="Edm.String" MaxLength="4" sap:label="Available Stock" sap:display-format="NonNegative"/>
+                <Property Name="PrecioUnitario" Type="Edm.String" MaxLength="6" sap:label="Unit Price" sap:display-format="NonNegative"/>
                 <NavigationProperty Name="to_Mara" Relationship="cds_zmara_service_definition.assoc_F3A7E9A6BF288E80690A627FE9916F13" FromRole="ToRole_assoc_F3A7E9A6BF288E80690A627FE9916F13" ToRole="FromRole_assoc_F3A7E9A6BF288E80690A627FE9916F13"/>
             </EntityType>
             <EntityType Name="ProvedorType" sap:label="ZPROVEEDOR BO projection view" sap:content-version="1">
@@ -322,7 +322,7 @@
                 <EntitySet Name="SAP__PDFFooterSet" EntityType="cds_zmara_service_definition.SAP__PDFFooter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
                 <EntitySet Name="SAP__ValueHelpSet" EntityType="cds_zmara_service_definition.SAP__ValueHelp" sap:content-version="1"/>
                 <EntitySet Name="Mara" EntityType="cds_zmara_service_definition.MaraType" sap:searchable="true" sap:content-version="1"/>
-                <EntitySet Name="MatProv" EntityType="cds_zmara_service_definition.MatProvType" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="MatProv" EntityType="cds_zmara_service_definition.MatProvType" sap:creatable="true" sap:updatable="true" sap:searchable="true" sap:content-version="1"/>
                 <EntitySet Name="Provedor" EntityType="cds_zmara_service_definition.ProvedorType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
                 <AssociationSet Name="to_FooterSet" Association="cds_zmara_service_definition.to_Footer" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
                     <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_Footer"/>

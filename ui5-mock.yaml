@@ -15,10 +15,6 @@ server:
             - /resources
             - /test-resources
           url: https://ui5.sap.com
-        backend:
-          - path: /sap
-            url: https://95dd8c1f-9cd4-4de9-b928-0b89cd0c49b3.abap.eu10.hana.ondemand.com
-            destination: GA5
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
