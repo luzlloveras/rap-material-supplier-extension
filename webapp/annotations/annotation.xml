@@ -29,7 +29,7 @@
                 <Annotation Term="UI.HeaderFacets">
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Label" String="Stock"/>
+                            <PropertyValue Property="Label" String="Stock Status"/>
                             <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Stock"/>
                         </Record>
                         <Record Type="UI.ReferenceFacet">
@@ -40,8 +40,16 @@
                 </Annotation>
                 <Annotation Term="UI.DataPoint" Qualifier="Stock">
                     <Record>
-                        <PropertyValue Property="Title" String="Stock"/>
+                        <PropertyValue Property="Title" String="Stock Status"/>
                         <PropertyValue Property="Value" Path="Stock"/>
+                        <PropertyValue Property="CriticalityRepresentation" EnumMember="UI.CriticalityRepresentationType/WithIcon"/>
+                        <PropertyValue Property="CriticalityCalculation">
+                            <Record Type="UI.CriticalityCalculationType">
+                                <PropertyValue Property="ImprovementDirection" EnumMember="UI.ImprovementDirectionType/Maximize"/>
+                                <PropertyValue Property="ToleranceRangeLowValue" Int="50"/>
+                                <PropertyValue Property="DeviationRangeLowValue" Int="20"/>
+                            </Record>
+                        </PropertyValue>
                     </Record>
                 </Annotation>
                 <Annotation Term="UI.DataPoint" Qualifier="UnitPrice">
@@ -167,9 +175,9 @@
                             <PropertyValue Property="Label" String="Supplier Name"/>
                             <PropertyValue Property="Value" Path="ProveedorDescription"/>
                         </Record>
-                        <Record Type="UI.DataField">
-                            <PropertyValue Property="Label" String="Available Stock"/>
-                            <PropertyValue Property="Value" Path="Stock"/>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Label" String="Stock Status"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Stock"/>
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Label" String="Unit Price"/>

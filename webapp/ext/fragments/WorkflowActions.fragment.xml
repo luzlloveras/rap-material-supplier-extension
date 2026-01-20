@@ -4,9 +4,18 @@
         <Text text="Lightweight workflow signals and actions for demo purposes."/>
         <ObjectStatus text="{ui>/workflowStage}" state="Warning"/>
         <Text text="Last action: {ui>/lastAction}"/>
-        <HBox class="sapUiSmallMarginTop">
-            <Button text="Request Quote" type="Emphasized" press="onRequestQuote"/>
-            <Button text="Flag Supplier" type="Transparent" press="onFlagSupplier" class="sapUiTinyMarginBegin"/>
-        </HBox>
+        <OverflowToolbar class="sapUiSmallMarginTop">
+            <Button
+                text="Request Quote"
+                type="Emphasized"
+                press="onRequestQuote"
+                enabled="{= +${Stock} &lt; 50 }"/>
+            <Button
+                text="Flag Supplier"
+                type="Transparent"
+                press="onFlagSupplier"
+                priority="AlwaysOverflow"
+                visible="{= +${Stock} &lt;= 20 }"/>
+        </OverflowToolbar>
     </VBox>
 </core:FragmentDefinition>
