@@ -56,8 +56,8 @@
                 <Property Name="IdProveedor" Type="Edm.String" Nullable="false" MaxLength="40" sap:label="Supplier ID" sap:creatable="true" sap:updatable="true"/>
                 <Property Name="MaterialDescription" Type="Edm.String" MaxLength="40" sap:label="Material Description"/>
                 <Property Name="ProveedorDescription" Type="Edm.String" MaxLength="40" sap:label="Supplier Name"/>
-                <Property Name="Stock" Type="Edm.String" MaxLength="4" sap:label="Available Stock" sap:display-format="NonNegative"/>
-                <Property Name="PrecioUnitario" Type="Edm.String" MaxLength="6" sap:label="Unit Price" sap:display-format="NonNegative"/>
+                <Property Name="Stock" Type="Edm.Decimal" Precision="13" Scale="0" sap:label="Available Stock" sap:display-format="NonNegative"/>
+                <Property Name="PrecioUnitario" Type="Edm.Decimal" Precision="13" Scale="2" sap:label="Unit Price" sap:display-format="NonNegative"/>
                 <NavigationProperty Name="to_Mara" Relationship="cds_zmara_service_definition.assoc_F3A7E9A6BF288E80690A627FE9916F13" FromRole="ToRole_assoc_F3A7E9A6BF288E80690A627FE9916F13" ToRole="FromRole_assoc_F3A7E9A6BF288E80690A627FE9916F13"/>
             </EntityType>
             <EntityType Name="ProvedorType" sap:label="ZPROVEEDOR BO projection view" sap:content-version="1">

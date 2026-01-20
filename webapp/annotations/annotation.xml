@@ -46,8 +46,8 @@
                         <PropertyValue Property="CriticalityCalculation">
                             <Record Type="UI.CriticalityCalculationType">
                                 <PropertyValue Property="ImprovementDirection" EnumMember="UI.ImprovementDirectionType/Maximize"/>
-                                <PropertyValue Property="ToleranceRangeLowValue" Int="50"/>
-                                <PropertyValue Property="DeviationRangeLowValue" Int="20"/>
+                                <PropertyValue Property="ToleranceRangeLowValue" Decimal="50"/>
+                                <PropertyValue Property="DeviationRangeLowValue" Decimal="20"/>
                             </Record>
                         </PropertyValue>
                     </Record>
